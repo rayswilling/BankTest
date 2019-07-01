@@ -21,7 +21,7 @@ describe("A bank", function () {
             const movDate = new Date();
             date = (`${movDate.getDate()}/${movDate.getMonth() + 1}/${movDate.getFullYear()}`)
 
-            expect(bank._transactions).toEqual([`${date} || 1000 || || 1000`]);
+            expect(bank._transactions).toEqual(["date || credit || debit || balance", `${date} || 1000 || || 1000`]);
         });
     });
 
@@ -39,14 +39,28 @@ describe("A bank", function () {
             const movDate = new Date();
             date = (`${movDate.getDate()}/${movDate.getMonth() + 1}/${movDate.getFullYear()}`)
 
-            expect(bank._transactions).toEqual([`${date} || || 1000 || -1000`]);
+            expect(bank._transactions).toEqual(["date || credit || debit || balance", `${date} || || 1000 || -1000`]);
         });
     });
 
-    // describe("printStatement", function(){
+    describe("Transaction list", function(){
 
-    //     it("should print a statement list out beginning with date || credit || debit || balance as it's header", function() {
-    //         expect(bank.printStatement).toContain("date || credit || debit || balance")
-    //     })
+        it("'has || credit || debit || balance' is it's header", function() {
+            expect((bank._transactions).indexOf("date || credit || debit || balance")).toEqual(0)
+        })
+        
+        it("new transactions added from index 1", function() {
+            bank.deposit(1000)
+
+            expect((bank._transactions).indexOf(`${date} || 1000 || || 1000`)).toEqual(1)
+        })
+    });
+
+    // describe("bankStatement", function() {
+        
+    //     it ("should print a bank statement", function() {
+    //         bank.deposit(1000)
+    //         expect(bank._balance).toEqual(["date || credit || debit || balance", `${date} || 1000 || || 1000`]);
+    //     });
     // });
 });

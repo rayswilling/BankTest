@@ -1,7 +1,7 @@
 function Bank() {
 
     this._balance = 0
-    this._transactions = []
+    this._transactions = ["date || credit || debit || balance"]
 
     this.deposit = function(amount) {
         const movDate = new Date();
@@ -12,7 +12,7 @@ function Bank() {
         balance = this._balance;
         record = `${date} || ${credit} || || ${balance}`
 
-        this._transactions.push(record);
+        this._transactions.splice(1, 0, record);
 
         return true
     };
@@ -26,8 +26,14 @@ function Bank() {
         balance = this._balance;
         record = `${date} || || ${debit} || ${balance}`
 
-        this._transactions.push(record);
+        this._transactions.splice(1,0, record);
 
         return true
+    };
+
+    this.bankStatement = function() {
+        this._transactions.forEach(function(element) {
+            console.log(element)
+        });
     };
 };
