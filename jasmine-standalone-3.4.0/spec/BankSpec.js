@@ -1,19 +1,33 @@
 describe("A bank", function () {
+
     beforeEach(function() {
         bank = new Bank(); 
     });
 
     it ("has a starting bank balance of 0", function() {
-        expect(bank.Balance).toEqual(0);
+        expect(bank.balance).toEqual(0);
     });
    
     describe("Deposit", function() {
         
         it ("should increase bank balance by R1000", function() {
             bank.deposit(1000)
-            expect(bank.Balance).toEqual(1000);
+            expect(bank.balance).toEqual(1000);
         });
-        
+
+        it ("should reflect a the transaction in the transaction list", function () {
+            bank.deposit(1000)
+            const movDate = new Date();
+
+            expect(bank.transactions).toEqual([
+                {
+                    date: (`${movDate.getDate()}/${movDate.getMonth() + 1}/${movDate.getFullYear()}`),
+                    credit: 1000, 
+                    debit: "",
+                    balance: 1000
+                },
+            ])
+        })
     });
 
     describe("Withdraw", function() {
@@ -21,35 +35,22 @@ describe("A bank", function () {
         it ("should decrease bank balance by R500", function() {
             bank.deposit(1000)
             bank.withdraw(500)
-            expect(bank.Balance).toEqual(500);
+            expect(bank.balance).toEqual(500);
         });
-
     });
 });
 
-
-
-
-// describe("A bank", function() { 
+// describe('Transactions have a date attached', function() {
+//     var bank 
     
-//     beforeEach(function() {
-//         airport = new Airport(); 
-//         plane = jasmine.createSpy('plane'); 
-//         spyOn(airport, 'isStormy').and.returnValue(false);
-//     }); 
-    
-//     it ("is an airport with an empty array", function() {
-//         expect(airport.planes).toEqual([]); 
-//     }); 
-    
-//     it ("adds a plane to its array (land)", function() {
-//         airport.land(plane);
-//         expect(airport.planes).toEqual([plane]);
-//     });
+//     var trnsAct1 = {amount: 250, date: new Date("2010-08-19"), type: 'credit', balance: 500}
 
-//     it ("deletes a plane from its array (take-off)", function() {
-//         airport.land(plane);
-//         airport.takeOff(plane);
-//         expect(airport.planes).toEqual([]); 
-//     });
-// });
+//     beforeEach(function () {
+//         bank = new Bank()
+//     })
+
+//     it('A transaction should have a date attached for statement', function () {
+//         bank.transactions.push(trnsAct1)
+//         expect(bank.statementCreate()).toContain("19/08/2010")
+//     })
+// })
