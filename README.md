@@ -1,8 +1,8 @@
 ### 
 
-### My Approach
+## My Approach
 
-## Pre-code: 
+### Pre-code: 
 
 I planned out this app using diagrams. 
 I planned out how I was going to work through this app by making use of pomodoro's and planning each 25 minute session out on a piece of paper. 
@@ -23,21 +23,21 @@ Each session had a few goals written down, which reminded me of where and what I
 
 3. I then added the date || credit || debit || balance header to the _transaction list and made sure the deposit and withdrawal methods were pushing to the second element of the array, leaving the heading to stay at 0. 
 
-### Functionality: 
+## Functionality: 
 
 Deposit and withdrawal methods were easy to create. It has got quite difficult when I had to attach each transaction to a date. 
 
 Looking over other solutions I have realised I can use transactions as a way to attach each transaction to a time. 
 
-### How to run 
+## How to run 
 To run this app, just open index.html in your browser. 
 
 ### How to run the tests
 Everything required to run Jasmine is within the lib folder. You just need to open SpecRunner.html in your browser to run the tests.
 
 ### Acceptance Criteria
-• Given a client makes a deposit of 1000 on 10-01-2012
-• And a deposit of 2000 on 13-01-2012
-• And a withdrawal of 500 on 14-01-2012
-• When she prints her bank statement
-• Then she would see
+**Given** a client makes a deposit of 1000 on 10-01-2012
+**And** a deposit of 2000 on 13-01-2012
+**And** a withdrawal of 500 on 14-01-2012
+**When** she prints her bank statement
+Then she would see
