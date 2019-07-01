@@ -1,32 +1,32 @@
 function Bank() {
 
-    this.balance = 0.00
-    this.transactions = []
+    this._balance = 0
+    this._transactions = []
 
     this.deposit = function(amount) {
         const movDate = new Date();
-        this.balance += amount;
+        this._balance += amount;
 
-        this.transactions.push({
-            date: (`${movDate.getDate()}/${movDate.getMonth() + 1}/${movDate.getFullYear()}`),
-            credit: amount,
-            debit: "",
-            balance: this.balance
-        });
+        date = (`${movDate.getDate()}/${movDate.getMonth() + 1}/${movDate.getFullYear()}`)
+        credit = amount;
+        balance = this._balance;
+        record = `${date} || ${credit} || || ${balance}`
+
+        this._transactions.push(record);
 
         return true
     };
 
     this.withdraw = function(amount) {
         const movDate = new Date();
-        this.balance -= amount;
+        this._balance -= amount;
+        
+        date = (`${movDate.getDate()}/${movDate.getMonth() + 1}/${movDate.getFullYear()}`)
+        debit = amount;
+        balance = this._balance;
+        record = `${date} || || ${debit} || ${balance}`
 
-        this.transactions.push({
-            date: (`${movDate.getDate()}/${movDate.getMonth() + 1}/${movDate.getFullYear()}`),
-            credit: "",
-            debit: amount,
-            balance: this.balance
-        });
+        this._transactions.push(record);
 
         return true
     };
