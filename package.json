@@ -1,0 +1,23 @@
+{
+  "name": "config.ru",
+  "version": "1.0.0",
+  "description": "## My Approach",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^6.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rayswilling/BankTest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rayswilling/BankTest/issues"
+  },
+  "homepage": "https://github.com/rayswilling/BankTest#readme"
+}

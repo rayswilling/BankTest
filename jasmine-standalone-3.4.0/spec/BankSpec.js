@@ -25,7 +25,7 @@ describe("A bank", function () {
             const movDate = new Date();
             date = (`${movDate.getDate()}/${movDate.getMonth() + 1}/${movDate.getFullYear()}`)
 
-            expect(bank._transactions).toEqual(["date || credit || debit || balance", `${date} || 1000 || || 1000`]);
+            expect(bank._transactions).toEqual(["date || credit || debit || balance", `${date} || 1000.00 || || 1000.00`]);
         });
     });
 
@@ -43,7 +43,7 @@ describe("A bank", function () {
             const movDate = new Date();
             date = (`${movDate.getDate()}/${movDate.getMonth() + 1}/${movDate.getFullYear()}`)
 
-            expect(bank._transactions).toEqual(["date || credit || debit || balance", `${date} || || 1000 || -1000`]);
+            expect(bank._transactions).toEqual(["date || credit || debit || balance", `${date} || || 1000.00 || -1000.00`]);
         });
     });
 
@@ -56,7 +56,7 @@ describe("A bank", function () {
         it("new transactions added from index 1", function() {
             bank.deposit(1000)
 
-            expect((bank._transactions).indexOf(`${date} || 1000 || || 1000`)).toEqual(1)
+            expect((bank._transactions).indexOf(`${date} || 1000.00 || || 1000.00`)).toEqual(1)
         })
     });
 

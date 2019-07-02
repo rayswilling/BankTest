@@ -6,7 +6,7 @@
 
 I planned out this app using diagrams. 
 I planned out how I was going to work through this app by making use of pomodoro's and planning each 25 minute session out on a piece of paper. 
-I did not setup the project using ESLint, as this was not something I was familiar with it and didn't want to waste time following walk throughs. 
+I setup the project with ESLint as my inter. 
 
 Regarding the development process, I aimed to stick to: 
 * Unit Tests
@@ -36,8 +36,16 @@ To run this app, just open index.html in your browser.
 Everything required to run Jasmine is within the lib folder. You just need to open SpecRunner.html in your browser to run the tests.
 
 ### Acceptance Criteria
-**Given** a client makes a deposit of 1000 on 10-01-2012
+**Given** a client makes a deposit of 1000 on 10-01-2012 
 **And** a deposit of 2000 on 13-01-2012
 **And** a withdrawal of 500 on 14-01-2012
 **When** she prints her bank statement
 Then she would see
+
+### Images:
+
+![[pic1]](./images/pic1.png)
+![[pic2]](./images/pic2.png)
+![[pic3]](./images/pic3.png)
+![[pic4]](./images/pic4.png)
+![[pic5]](./images/pic5.png)
