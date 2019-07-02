@@ -4,8 +4,12 @@ describe("A bank", function () {
         bank = new Bank(); 
     });
 
-    it ("has a starting bank balance of 0", function() {
-        expect(bank._balance).toEqual(0);
+    it ("has a starting bank balance of 0.00", function() {
+        expect(bank._balance).toEqual(0.00);
+    });
+
+    it ("has two decimal places", function() {
+        expect(bank._balance).toEqual(0.00);
     });
    
     describe("Deposit", function() {
