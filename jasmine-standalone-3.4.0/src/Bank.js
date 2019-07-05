@@ -1,5 +1,3 @@
-balanceManager = balanceManager.deposit()
-
 function Bank() {
 
     this._balance = 0
